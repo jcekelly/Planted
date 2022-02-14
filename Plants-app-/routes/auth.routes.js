@@ -4,6 +4,8 @@ const router = new Router();
 const bcryptjs = require('bcryptjs');
 const User = require('../models/User.model');
 const saltRounds = 10;
+
+let test;
  
 
 router.get('/signup', (req, res) => res.render('auth/signup'));
