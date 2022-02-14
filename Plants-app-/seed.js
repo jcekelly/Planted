@@ -15,7 +15,9 @@ mongoose.connect('mongodb://localhost/Plants-app-')
     humidity: 'No particular requirements',
     temperature: 'Above 10ºC min.',
     fertilizer: 'Every 2 months',
-    toxicityForPets: 'Dangerous to small children and animals',}
+    toxicityForPets: 'Dangerous to small children and animals',
+    image_url: 'insert url'
+}
 ]
 
 Plant.create(plants)
