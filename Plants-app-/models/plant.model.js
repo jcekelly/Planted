@@ -10,7 +10,10 @@ const plantSchema = new Schema (
     humidity: String,
     temperature: String,
     fertilizer: String,
-    toxicityForPets: String,}
+    toxicityForPets: String,
+    image_url: String,
+}
+    
 )
 
 const Plant = model('Plant', plantSchema)

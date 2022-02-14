@@ -8,6 +8,7 @@ const saltRounds = 10;
 
 router.get('/signup', (req, res) => res.render('auth/signup'));
 
+
 router.post('/signup', (req, res, next) => {   
     const { username, password } = req.body;
    
@@ -25,6 +26,29 @@ router.post('/signup', (req, res, next) => {
       })
       .catch(error => next(error));
   });
+
+  router.get("/login", (req, res, next) => {
+    res.render("auth/login");
+  });
+
+  router.post('/login', (req,res,next)=>{
+    const {username, password } = req.body
+
+    console.log('SESSION =====> ', req.session);
+
+    User.findOne({ username: username})
+    .then(userFromDB => {
+        if( userFromDB === null) {
+            res.render('auth/login', {message: 'User Does Not Exist'})
+            return
+        }
+        if (bcryptjs.compareSync(password, userFromDB.passwordHash)) {
+            console.log('User Authenticated')
+            req.session.currentUser = userFromDB;
+            res.redirect('/dashboard')
+        }
+    })
+})
 
 
 module.exports = router;
