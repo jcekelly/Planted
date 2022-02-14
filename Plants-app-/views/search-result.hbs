@@ -1,0 +1,14 @@
+<h2>this are the results</h2>
+
+<input type="text" name="search">
+<button type="submit">search</button>
+
+{{#each plants}}
+<img src="{{imgPath}}" alt="picture of  {{comonName}}"/>
+{{family}}
+{{comonName}}
+{{humidity}}
+{{light}}
+<button type="submit">Add to personal collection</button>
+<button type="submit">Add to the chart</button>
+{{/each}}

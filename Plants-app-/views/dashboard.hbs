@@ -1,0 +1,16 @@
+<h2>this is the dashboard, aka your personal collection</h2>
+<input type="text" name="search">
+<button type="submit">search</button>
+
+
+<div>
+{{#each plants}}
+<img src="{{imgPath}}" alt="picture of  {{comonName}}"/>
+{{family}}
+{{comonName}}
+{{humidity}}
+{{watering}}
+<a href="/plant/{{id}}/edit/">Edit plant</a>
+<a href="/plant/delete/{{id}}">Delete plant</a>
+{{/each}}
+</div>

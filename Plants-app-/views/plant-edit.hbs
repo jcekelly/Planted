@@ -1,0 +1,15 @@
+
+
+<h2>Edit the plant: {{plant.name}}</h2>
+
+<form action="{{plant._id}}/edit" method="post">
+  <label> Pot size:
+    <input type="text" name="title" value="{{plant.size.pot}}" />
+  </label>
+
+  <label> Height:
+    <input type="text" name="author" value="{{plant.size.height}}" />
+  </label>
+  
+  <button>Save changes</button>
+</form>
