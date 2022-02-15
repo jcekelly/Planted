@@ -13,6 +13,12 @@ const userSchema = new Schema(
       type: String,
       required: [true, 'Password is required']
     },
+    myPlants : [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Plant',
+      }
+    ],
   },
   {
     timestamps: true,

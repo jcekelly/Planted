@@ -1,14 +1,24 @@
+<div class="topnav">
+  <a class="active" href="dashboard">Dashboard</a>
+  <a href="search-result">View all</a>
+</div>
+
 <h2>this are the results</h2>
 
 <input type="text" name="search">
 <button type="submit">search</button>
+
+<hr size="3" width="90%" color="green">  
 
 {{#each plants}}
 <img src="{{imgPath}}" alt="picture of  {{comonName}}"/>
 {{family}}
 {{comonName}}
 {{humidity}}
-{{light}}
-<button type="submit">Add to personal collection</button>
+<p>{{light}}</p>
+
+
+<button><a href="/dashboard/{{this._id}}/add">Add to your private collection</a></button>
+
 <button type="submit">Add to the chart</button>
 {{/each}}
