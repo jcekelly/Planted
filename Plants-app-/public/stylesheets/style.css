@@ -57,3 +57,23 @@ img {
   flex-direction: column;
   align-items: flex-start;
 }
+
+.index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.index-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 30px;
+  background-color: rgba(51, 133, 69, 0.671);
+  text-decoration: none;
+  color: white;
+  margin: 40px;
+  width: 300px;
+  height: 100px;
+}
