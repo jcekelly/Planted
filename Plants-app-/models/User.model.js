@@ -17,6 +17,10 @@ const userSchema = new Schema(
       {
         type: Schema.Types.ObjectId,
         ref: 'Plant',
+        size: {
+          potSize: Number,
+          height: Number
+      }
       }
     ],
   },

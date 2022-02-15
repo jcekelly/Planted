@@ -5,7 +5,6 @@ const plantSchema = new Schema (
     family: String,
     name: String,
     commonName: String,
-    size: String,
     watering: String,
     light: String,
     humidity: String,
