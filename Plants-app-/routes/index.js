@@ -38,8 +38,6 @@ router.get('/dashboard/:id/add', (req, res, next) => {
   User.findByIdAndUpdate(req.session.currentUser._id , {
     $push: {myPlants: req.params.id}
   })
-  //console.log('session', req.session)
-  //User.findById(req.session.currentUser._id)
     .then((user) => {
       console.log(user)
      res.redirect('/dashboard')
@@ -49,7 +47,7 @@ router.get('/dashboard/:id/add', (req, res, next) => {
     })
 });
 
-
+//this is the edit route
 
 router.get('/dashboard/:id/edit', (req, res, next) => {
     Plant.findById(req.params.id)
@@ -61,6 +59,17 @@ router.get('/dashboard/:id/edit', (req, res, next) => {
       })
 });
 
+router.post('/dashboard/:id/edit', (req, res, next)=> {
+  User.findByIdAndUpdate(req.session.currentUser._id ,
+    { new: true })
+  .then(user =>{
+    res.redirect('/dashboard')
+  })
+    .catch(err => {
+      next(err);
+    })
+});
+ 
 
 router.get('/dashboard/:id/delete', (req, res, next) => {
   User.findByIdAndUpdate(req.session.currentUser._id , {

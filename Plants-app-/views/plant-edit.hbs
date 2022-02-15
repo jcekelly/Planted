@@ -1,15 +1,30 @@
 
+<h2>Edit the plant: {{plant.commonName}}</h2>
 
-<h2>Edit the plant: {{plant.name}}</h2>
+{{#with plant}}
 
-<form action="{{plant._id}}/edit" method="post">
+<img src="{{this.img_url}}" alt="picture of  {{this.commonName}}"/>
+<div>Category: {{this.Category}}</div>
+<div>Plant family: {{this.family}}</div>
+<div>Scientific name: {{this.name}}</div>
+<div>Common name: {{this.commonName}}</div>
+<div>Water: {{this.watering}}</div> 
+
+<form action="{{plant._id}}/edit" method="post"></form> 
   <label> Pot size:
-    <input type="text" name="title" value="{{plant.size.pot}}" />
+    <input type="number"  value="{{this.size.potSize}}" />
   </label>
-
   <label> Height:
-    <input type="text" name="author" value="{{plant.size.height}}" />
+    <input type="number"  value="{{this.size.height}}" />
   </label>
-  
   <button>Save changes</button>
 </form>
+
+
+<div>Humidity: {{this.humidity}}</div>
+<div>Temperature: {{this.temperature}}</div>
+<div>fertilizer: {{this.fertilizer}}</div>
+<div>Pets toxicity: {{this.toxicityForPets}}</div>
+
+
+{{/with}}
