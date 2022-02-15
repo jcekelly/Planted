@@ -1,5 +1,6 @@
 const router = require("express").Router();
-const Plant = require('../models/plant.model')
+const Plant = require('../models/plant.model');
+const User = require("../models/User.model");
 
 router.get("/", (req, res, next) => {
   res.render("index");
@@ -9,51 +10,51 @@ router.get("/", (req, res, next) => {
 // route for user dashboard + where all the plants are 
 
 router.get('/dashboard', (req, res, next) => {
-    Plant.find()
+    User.findById(req.params.id).populate("myPlants")
       .then(personalCollectionPlants => {
-        console.log('Retrieved plants:', personalCollectionPlants);
-        res.render('dashboard.hbs');
+        res.render('dashboard.hbs', {plants: personalCollectionPlants});
       })
       .catch(error => {
-        console.log('Error while getting the plants from the DB: ', error);
         next(error);
       });
-  });
-   
+});
+  
 
 // routes to add + edit the plants 
 
-router.get('/searchresult', (req, res, next) => {
-  Plant.findById()
-    .then(allPlantsWithResult => {
-      console.log('Retrieved plants:', allPlantsWithResult);
-      res.render('search-result.hbs');
+router.get('/search-result', (req, res, next) => {
+  Plant.find()
+    .then(allPlants => {
+      res.render('search-result.hbs', {plants:allPlants});
     })
     .catch(error => {
-        console.log('Error while getting the plants from the DB: ', error);
         next(error);
       });
-  });
+});
 
-  router.get(':plantId/edit', (req, res, next) => {
-    const { plantId } = req.params;
-   
-    Plant.findById(plantId)
+
+
+router.get('/dashboard/:id/edit', (req, res, next) => {
+    Plant.findById(req.params.id)
       .then(plantToEdit => {
         res.render('plant-edit.hbs', { plant: plantToEdit }); 
       })
-      .catch(error => next(error));
-  });
+      .catch(err => {
+        next(err);
+      })
+});
 
-  /*router.post(':bookId/edit', (req, res, next) => {
-    const { plantId } = req.params;
-    //const {  } = req.body;
-   
-    //Plant.findByIdAndUpdate(plantId, {  }, { new: true })
-      .then(updatedPlant => res.redirect(`/books/${updatedBook.id}`)) // go to the details page to see the updates
-      .catch(error => next(error));
-  });
-*/
+
+router.post('/dashboard/:id/delete', (req, res, next) => {
+    Plant.findOneAndDelete({ _id: req.params.id })
+      .then(() => {
+        res.redirect('/dashboard');
+      })
+      .catch(err => {
+        next(err);
+      })
+});
+
 module.exports = router;
 
 

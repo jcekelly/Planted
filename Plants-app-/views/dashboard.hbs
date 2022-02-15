@@ -1,16 +1,27 @@
+<div class="topnav">
+  <a class="active" href="dashboard">Dashboard</a>
+  <a href="search-result">View all</a>
+</div>
+
+
 <h2>this is the dashboard, aka your personal collection</h2>
 <input type="text" name="search">
 <button type="submit">search</button>
-
+<hr size="3" width="90%" color="green">  
 
 <div>
 {{#each plants}}
-<img src="{{imgPath}}" alt="picture of  {{comonName}}"/>
-{{family}}
-{{comonName}}
-{{humidity}}
-{{watering}}
-<a href="/plant/{{id}}/edit/">Edit plant</a>
-<a href="/plant/delete/{{id}}">Delete plant</a>
+<img src="{{this.img_url}}" alt="picture of  {{this.commonName}}"/>
+
+<div>Plant family: {{this.family}}</div>
+<div>Common name: {{this.commonName}}</div>
+<div>Water: {{this.watering}}</div>
+<div>Humidity: {{this.humidity}}</div>
+
+<form action="/dashboard/{{ this._id }}/delete" method="POST">
+    <button type="submit">Delete</button>
+</form>
+<button><a href="/dashboard/{{ this._id }}/edit">Edit</a></button>
+
 {{/each}}
 </div>

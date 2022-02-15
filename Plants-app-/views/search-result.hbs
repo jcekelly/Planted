@@ -1,7 +1,14 @@
+<div class="topnav">
+  <a class="active" href="dashboard">Dashboard</a>
+  <a href="search-result">View all</a>
+</div>
+
 <h2>this are the results</h2>
 
 <input type="text" name="search">
 <button type="submit">search</button>
+
+<hr size="3" width="90%" color="green">  
 
 {{#each plants}}
 <img src="{{imgPath}}" alt="picture of  {{comonName}}"/>
