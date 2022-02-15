@@ -30,4 +30,18 @@ h1 {
   color: black;
 }
 
+li {
+  list-style: none;
+  padding: 10px;
+
+}
+
+ul {
+  padding: 25px;
+}
+
+img {
+  width: 300px;
+}
+
 
