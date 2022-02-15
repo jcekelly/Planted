@@ -12,12 +12,13 @@
 <div>
     {{#with user}}
 {{#each myPlants}}
-<img src="{{this.img_url}}" alt="picture of  {{this.commonName}}"/>
-
-<div>Plant family: {{this.family}}</div>
-<div>Common name: {{this.commonName}}</div>
-<div>Water: {{this.watering}}</div>
-<div>Humidity: {{this.humidity}}</div>
+<li><img src="{{image_url}}" alt="picture of  {{commonName}}"/></li>
+<li>Family: {{family}}</li>
+<li>Common Name: {{commonName}}</li>
+<li>Water: {{watering}}</li>
+<li>Humidtiy: {{humidity}}</li>
+<li> Light: {{light}}</li>
+</ul>
 
 <form action="/dashboard/{{ this._id }}/delete" method="GET">
     <button type="submit">Delete</button>
