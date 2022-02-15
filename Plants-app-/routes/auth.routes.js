@@ -25,6 +25,7 @@ router.post('/signup', (req, res, next) => {
       })
       .then(userFromDB => {
           console.log('new user:', userFromDB);
+          req.session.currentUser = userFromDB;
           res.redirect('/dashboard');
       })
       .catch(error => next(error));
