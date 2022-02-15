@@ -7,10 +7,11 @@
 <h2>this is the dashboard, aka your personal collection</h2>
 <input type="text" name="search">
 <button type="submit">search</button>
-<hr size="3" width="90%" color="green">  
+<hr size="3" width="100%" color="green">  
 
 <div>
-{{#each plants}}
+    {{#with user}}
+{{#each myPlants}}
 <img src="{{this.img_url}}" alt="picture of  {{this.commonName}}"/>
 
 <div>Plant family: {{this.family}}</div>
@@ -18,10 +19,11 @@
 <div>Water: {{this.watering}}</div>
 <div>Humidity: {{this.humidity}}</div>
 
-<form action="/dashboard/{{ this._id }}/delete" method="POST">
+<form action="/dashboard/{{ this._id }}/delete" method="GET">
     <button type="submit">Delete</button>
 </form>
 <button><a href="/dashboard/{{ this._id }}/edit">Edit</a></button>
 
 {{/each}}
+{{/with}}
 </div>
