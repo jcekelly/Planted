@@ -7,7 +7,7 @@ router.get("/", (req, res, next) => {
   // render signup + login
 });
 
-// route for user dashboard + where all the plants are 
+// route for user dashboard 
 
 router.get('/dashboard', (req, res, next) => {
     User.findById(req.params.id).populate("myPlants")
@@ -20,7 +20,7 @@ router.get('/dashboard', (req, res, next) => {
 });
   
 
-// routes to add + edit the plants 
+// route for the global plant collection
 
 router.get('/search-result', (req, res, next) => {
   Plant.find()
@@ -30,6 +30,20 @@ router.get('/search-result', (req, res, next) => {
     .catch(error => {
         next(error);
       });
+});
+
+//this is the route to add the plant to your private collection
+
+router.get('/dashboard/:id/add', (req, res, next) => {
+  User.findByIdAndUpdate(req.session.user._id, {
+    $push: {myPlants: req.params.id}
+  })
+    .then(newPlantInCollection => {
+      res.render('dashboard.hbs', { plant: newPlantInCollection }); 
+    })
+    .catch(err => {
+      next(err);
+    })
 });
 
 
