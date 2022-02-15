@@ -41,7 +41,19 @@ ul {
 }
 
 img {
-  width: 300px;
+  width: 200px;
 }
 
+.plant-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
 
+.plant {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
