@@ -6,13 +6,18 @@
   <a href="search-result">View all</a>
 </div>
 
+<h2>Results</h2>
 
-<h2>Your Personal Collection</h2>
+<form action="/search" method="GET">
+  <label>
+    Search Plants
+    <input type="text" name="plant">
+  </label>
+
 <hr size="3" width="100%" color="green">  
 
 <div class="plant-list">
-    {{#with user}}
-{{#each myPlants}}
+{{#each plant}}
 <div class="plant">
 <li><img src="{{image_url}}" alt="picture of  {{commonName}}"/></li>
 <li>Family: {{family}}</li>
@@ -23,12 +28,11 @@
 </ul>
 
 
-<form action="/dashboard/{{ this._id }}/delete" method="GET">
-    <button type="submit">Delete</button>
-</form>
-<button><a href="/dashboard/{{ this._id }}/edit">Edit</a></button>
+<button><a href="/dashboard/{{this._id}}/add">Add to your private collection</a></button>
+
+<button type="submit">Add to the chart</button>
+
+</div>
+{{/each}}
 </div>
 
-{{/each}}
-{{/with}}
-</div>
