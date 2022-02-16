@@ -14,16 +14,18 @@
 {{#each myPlants}}
 <img src="{{this.img_url}}" alt="picture of  {{this.commonName}}"/>
 
-<div>Plant family: {{this.family}}</div>
-<div>Common name: {{this.commonName}}</div>
-<div>Water: {{this.watering}}</div>
-<div>Humidity: {{this.recommendedHumidity}}</div>
+<div>Plant family: {{this.id.family}}</div>
+<div>Common name: {{this.id.commonName}}</div>
+<div>Water: {{this.id.watering}}</div>
+<div>Humidity: {{this.id.humidity}}</div>
 
 <form action="/dashboard/{{ this._id }}/delete" method="GET">
-    <button type="submit">Delete</button>
+  <button type="submit" class="button">Remove</button>
 </form>
 <button><a href="/dashboard/{{ this._id }}/edit">Edit</a></button>
 
 {{/each}}
 {{/with}}
 </div>
+//this.id.familiy displays the DB value
+//eitout .id displays the current values
