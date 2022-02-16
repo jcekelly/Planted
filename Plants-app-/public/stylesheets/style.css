@@ -54,7 +54,6 @@ img {
   width: 200px;
 }
 
-<<<<<<< HEAD
 /*
 .button {
   display: block;
@@ -144,7 +143,6 @@ img {
   opacity: 1;
 }
 */
-=======
 .plant-list {
   display: flex;
   flex-direction: row;
@@ -178,4 +176,3 @@ img {
   width: 300px;
   height: 100px;
 }
->>>>>>> 33d598af884a6a35b528313edf2e40dfb5abd1e6

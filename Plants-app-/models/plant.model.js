@@ -12,9 +12,7 @@ const plantSchema = new Schema (
     fertilizer: String,
     toxicityForPets: String,
     image_url: String,
-}
-    
-)
+})
 
 const Plant = model('Plant', plantSchema)
 

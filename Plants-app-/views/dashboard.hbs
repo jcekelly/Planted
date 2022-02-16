@@ -12,24 +12,18 @@
 <hr size="3" width="100%" color="green">  
 
 <div class="plant-list">
-    {{#with user}}
-{{#each myPlants}}
-<div class="plant">
-<li><img src="{{image_url}}" alt="picture of  {{commonName}}"/></li>
-<li>Family: {{family}}</li>
-<li>Common Name: {{commonName}}</li>
-<li>Water: {{watering}}</li>
-<li>Humidtiy: {{humidity}}</li>
-<li> Light: {{light}}</li>
-</ul>
 
-<<<<<<< HEAD
-<div>Plant family: {{this.id.family}}</div>
-<div>Common name: {{this.id.commonName}}</div>
-<div>Water: {{this.id.watering}}</div>
-<div>Humidity: {{this.id.humidity}}</div>
-=======
->>>>>>> 33d598af884a6a35b528313edf2e40dfb5abd1e6
+{{#with user}}
+{{#each myPlants}}
+
+<div class="plant">
+<li><img src="{{this.id.image_url}}" alt="picture of  {{this.id.commonName}}"/></li>
+<li>Family: {{this.id.family}}</li>
+<li>Common Name: {{this.id.commonName}}</li>
+<li>Water: {{this.id.watering}}</li>
+<li>Humidtiy: {{this.currentHumidity}}</li>
+<li> Light: {{this.id.light}}</li>
+</ul>
 
 <form action="/dashboard/{{ this._id }}/delete" method="GET">
   <button type="submit" class="button">Remove</button>
@@ -40,5 +34,3 @@
 {{/each}}
 {{/with}}
 </div>
-//this.id.familiy displays the DB value
-//eitout .id displays the current values

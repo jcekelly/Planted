@@ -17,6 +17,7 @@ const userSchema = new Schema(
       {
         id: {type: Schema.Types.ObjectId,
         ref: 'Plant'},
+        currentPicture: {type:String},
         currentTemperature:{type:Number},
         currentHumidity : {type:Number},
         currentCategory : {type:String},
