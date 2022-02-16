@@ -10,7 +10,7 @@ router.get("/", (req, res, next) => {
 // route for user dashboard 
 
 router.get('/dashboard', (req, res, next) => {
-    User.findById(req.session.currentUser._id).populate("myPlants")
+    User.findById(req.session.currentUser._id).populate("myPlants.id")
       .then(userFromDb => {
         res.render('dashboard.hbs', {user: userFromDb});
       })
@@ -46,7 +46,6 @@ router.get('/search', (req, res, next) => {
 });
 
 
-
 //this is the route to add the plant to your private collection
 
 router.get('/dashboard/:id/add', (req, res, next) => {
@@ -65,50 +64,42 @@ router.get('/dashboard/:id/add', (req, res, next) => {
 //this is the edit route
 
 router.get('/dashboard/:id/edit', (req, res, next) => {
-    Plant.findById(req.params.id)
-      .then(plantToEdit => {
-        res.render('plant-edit.hbs', { plant: plantToEdit }); 
+  console.log("test")
+  User.findById(req.session.currentUser._id)
+    .populate('myPlants.id')
+    .then((user) => {
+      let chosenPlant;
+      user.myPlants.map((plant) => {
+        console.log('params', req.params.id)
+        console.log('plant id', plant.id._id)
+        if (req.params.id.includes(plant.id._id)) {
+          chosenPlant = plant
+          console.log('chosen plant');
+        }})
+        res.render('plant-edit.hbs', { plant: chosenPlant }); 
+
       })
       .catch(err => {
         next(err);
       })
 });
 
-/*
-router.post('/:id/edit', (req, res, next)=> {
-  let plants = User.myPlants
-  //let plantToEdit = plants.find(plant => {
-    //return plant._id 
-  //})
-  User.findById(req.session.currentUser._id)
- //   { new: true }).map(plantToEdit)
-  .then(user =>{
-    user.myPlants.map((plant) => {
-      console.log('this is the plant', plant)
-    }) 
-    res.redirect('/dashboard')
-  })
-    .catch(err => {
-      next(err);
-    })
-});
-*/
 
 router.post('/:id/editThis', (req, res, next) => {
-  const { temperature, humidity, category, nickName, size:{potSize, height}} = req.body;
-
+  const { picture, temperature, humidity, category, nickName, size:{potSize, height}} = req.body;
   console.log('testing');
   User.findById(req.session.currentUser._id)
     .then((user) => {
       user.myPlants.map((plant) => {
-        if (req.params.id.includes(plant._id)) {
-          plant.temperature = temperature;
-          plant.humidity = humidity;
-          plant.category = category;
+        if (req.params.id.includes(plant.id._id)) {
+          plant.currentPicture = picture;
+          plant.currentTemperature = temperature;
+          plant.currentHumidity = humidity;
+          plant.currentCategory = category;
           plant.nickName = nickName;
           plant.size.potSize = potSize;
           plant.size.height = height;
-          
+        
           console.log('the plant', plant);
         }
       });
@@ -121,7 +112,7 @@ router.post('/:id/editThis', (req, res, next) => {
 
 router.get('/dashboard/:id/delete', (req, res, next) => {
   User.findByIdAndUpdate(req.session.currentUser._id , {
-    $pull: {myPlants: req.params.id}
+    $pull: {"myPlants": {"id": req.params.id} }
   })
     .then(() => {
       res.redirect('/dashboard')
@@ -132,5 +123,4 @@ router.get('/dashboard/:id/delete', (req, res, next) => {
 });
 
 module.exports = router;
-
 
