@@ -51,7 +51,7 @@ router.get('/search', (req, res, next) => {
 
 router.get('/dashboard/:id/add', (req, res, next) => {
   User.findByIdAndUpdate(req.session.currentUser._id , {
-    $push: {myPlants: req.params.id}
+    $push: {myPlants: {id: req.params.id}}
   })
     .then((user) => {
       console.log(user)
@@ -74,17 +74,50 @@ router.get('/dashboard/:id/edit', (req, res, next) => {
       })
 });
 
-router.post('/dashboard/:id/edit', (req, res, next)=> {
-  User.findByIdAndUpdate(req.session.currentUser._id ,
-    { new: true })
+/*
+router.post('/:id/edit', (req, res, next)=> {
+  let plants = User.myPlants
+  //let plantToEdit = plants.find(plant => {
+    //return plant._id 
+  //})
+  User.findById(req.session.currentUser._id)
+ //   { new: true }).map(plantToEdit)
   .then(user =>{
+    user.myPlants.map((plant) => {
+      console.log('this is the plant', plant)
+    }) 
     res.redirect('/dashboard')
   })
     .catch(err => {
       next(err);
     })
 });
- 
+*/
+
+router.post('/:id/editThis', (req, res, next) => {
+  const { temperature, humidity, category, nickName, size:{potSize, height}} = req.body;
+
+  console.log('testing');
+  User.findById(req.session.currentUser._id)
+    .then((user) => {
+      user.myPlants.map((plant) => {
+        if (req.params.id.includes(plant._id)) {
+          plant.temperature = temperature;
+          plant.humidity = humidity;
+          plant.category = category;
+          plant.nickName = nickName;
+          plant.size.potSize = potSize;
+          plant.size.height = height;
+          
+          console.log('the plant', plant);
+        }
+      });
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
 
 router.get('/dashboard/:id/delete', (req, res, next) => {
   User.findByIdAndUpdate(req.session.currentUser._id , {

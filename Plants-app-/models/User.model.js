@@ -15,13 +15,17 @@ const userSchema = new Schema(
     },
     myPlants : [
       {
-        type: Schema.Types.ObjectId,
-        ref: 'Plant',
-        size: {
-          potSize: Number,
-          height: Number
-      }
-      }
+        id: {type: Schema.Types.ObjectId,
+        ref: 'Plant'},
+        currentTemperature:{type:Number},
+        currentHumidity : {type:Number},
+        currentCategory : {type:String},
+        nickName : {type:String},
+        size : {
+          potsize: {type:Number},
+          height : {type:Number}
+        }
+      },
     ],
   },
   {
