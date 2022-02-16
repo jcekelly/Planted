@@ -102,7 +102,7 @@ router.post('/:id/editThis', (req, res, next) => {
       next(err);
     });
 });
-
+//hope it works
 
 router.get('/dashboard/:id/delete', (req, res, next) => {
   User.findByIdAndUpdate(req.session.currentUser._id , {
