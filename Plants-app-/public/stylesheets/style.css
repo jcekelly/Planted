@@ -1,3 +1,7 @@
+* {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -46,6 +50,21 @@ h1 {
   align-items: center;
 }
 
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form-input {
+  margin-bottom: 10px;
+}
+
+.login-form-button {
+  margin-bottom: 10px;
+  background-color: none;
+}
+
 li {
   list-style: none;
   padding: 10px;
@@ -60,8 +79,6 @@ img {
   width: 200px;
 }
 
-<<<<<<< HEAD
-=======
 .plant-list {
   display: flex;
   flex-direction: row;
@@ -76,7 +93,6 @@ img {
   align-items: flex-start;
 }
 
->>>>>>> 75fe543f7a65f639da3788d9de4f77f69dbbbaed
 /*
 .button {
   display: block;
@@ -166,27 +182,32 @@ img {
   opacity: 1;
 }
 */
-<<<<<<< HEAD
-.plant-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+
+h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 60px;
 }
 
-.plant {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-=======
->>>>>>> 75fe543f7a65f639da3788d9de4f77f69dbbbaed
+
 
 .index {
+  width: 400px ;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.index-background { 
+  background: url(https://res.cloudinary.com/dhbny7rpk/image/upload/v1645026752/chris-abney-qLW70Aoo8BE-unsplash_sujaun.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .index-links {
@@ -195,14 +216,11 @@ img {
   align-items: center;
   justify-content: space-around;
   font-size: 30px;
-  background-color: rgba(51, 133, 69, 0.671);
+  background-color: rgba(51, 133, 69, 0.774);
   text-decoration: none;
   color: white;
   margin: 40px;
   width: 300px;
   height: 100px;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 75fe543f7a65f639da3788d9de4f77f69dbbbaed
