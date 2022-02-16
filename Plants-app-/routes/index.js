@@ -32,6 +32,21 @@ router.get('/search-result', (req, res, next) => {
       });
 });
 
+// search function 
+
+
+router.get('/search', (req, res, next) => {
+  console.log(req.query);
+  const val = req.query.plant
+  Plant.find({$or:[{family: val},{commonName: val},{name: val},{Category: val}]})
+  .then(plantResults => {
+    res.render('view-all-search-result', {plant: plantResults})
+    console.log(plantResults);
+  }) 
+});
+
+
+
 //this is the route to add the plant to your private collection
 
 router.get('/dashboard/:id/add', (req, res, next) => {
