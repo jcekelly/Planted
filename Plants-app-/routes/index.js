@@ -32,9 +32,13 @@ router.get('/search-result', (req, res, next) => {
       });
 });
 
+// search function 
+
+
 router.get('/search', (req, res, next) => {
   console.log(req.query);
-  Plant.find(req.query)
+  const val = req.query.plant
+  Plant.find({family: val})
   .then(plantResults => {
     res.render('view-all-search-result', {plant: plantResults})
     console.log(plantResults);
