@@ -42,7 +42,7 @@ router.get('/search', (req, res, next) => {
   .then(plantResults => {
     res.render('view-all-search-result', {plant: plantResults})
     console.log(plantResults);
-  })
+  }) 
 });
 
 
