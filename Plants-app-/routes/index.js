@@ -59,17 +59,23 @@ router.get('/dashboard/:id/edit', (req, res, next) => {
       })
 });
 
-router.post('/dashboard/:id/edit', (req, res, next)=> {
-  User.findByIdAndUpdate(req.session.currentUser._id ,
-    { new: true })
+router.post('/:id/editTest', (req, res, next)=> {
+  let plants = User.myPlants
+  let plantToEdit = plants.find(plant => {
+    return plant._id 
+  })
+  User.findById(req.session.currentUser._id)
+ //   { new: true }).map(plantToEdit)
   .then(user =>{
-    res.redirect('/dashboard')
+    user.myPlants.map((plant) => {
+      console.log('this is the plant', plant)
+    }) 
+    //res.redirect('/dashboard')
   })
     .catch(err => {
       next(err);
     })
 });
- 
 
 router.get('/dashboard/:id/delete', (req, res, next) => {
   User.findByIdAndUpdate(req.session.currentUser._id , {
