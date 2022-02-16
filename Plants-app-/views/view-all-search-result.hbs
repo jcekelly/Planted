@@ -13,11 +13,11 @@
     Search Plants
     <input type="text" name="plant">
   </label>
-  
+
 <hr size="3" width="100%" color="green">  
 
 <div class="plant-list">
-{{#each plants}}
+{{#each plant}}
 <div class="plant">
 <li><img src="{{image_url}}" alt="picture of  {{commonName}}"/></li>
 <li>Family: {{family}}</li>
@@ -35,3 +35,4 @@
 </div>
 {{/each}}
 </div>
+
