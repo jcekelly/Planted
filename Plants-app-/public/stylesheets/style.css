@@ -30,6 +30,16 @@ h1 {
   color: black;
 }
 
+.logout {
+  color: #f2f2f2;
+  width: 30px;
+  text-decoration: none;
+  font-size: 17px;
+  border: none;
+  background: none;
+  padding-top: 14px;
+}
+
 li {
   list-style: none;
   padding: 10px;
