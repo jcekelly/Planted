@@ -32,6 +32,11 @@ router.get('/search-result', (req, res, next) => {
       });
 });
 
+router.get('/search', (req, res, next) => {
+  res.send(req.query);
+  console.log(req.query)
+});
+
 //this is the route to add the plant to your private collection
 
 router.get('/dashboard/:id/add', (req, res, next) => {
