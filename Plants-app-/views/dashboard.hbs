@@ -12,6 +12,7 @@
 <hr size="3" width="100%" color="green">  
 
 <div class="plant-list">
+<<<<<<< HEAD
 
 {{#with user}}
 {{#each myPlants}}
@@ -24,6 +25,26 @@
 <li>Humidtiy: {{this.currentHumidity}}</li>
 <li> Light: {{this.id.light}}</li>
 </ul>
+=======
+    {{#with user}}
+{{#each myPlants}}
+<div class="plant">
+<li> <img src='{{image_url}}' alt="picture of  {{commonName}}"/> </li>
+<li>Family: {{family}}</li>
+<li>Common Name: {{commonName}}</li>
+<li>Water: {{watering}}</li>
+<li>Humidtiy: {{humidity}}</li>
+<li> Light: {{light}}</li>
+</ul>
+
+{{!-- 
+<div>Plant family: {{this.id.family}}</div>
+<div>Common name: {{this.id.commonName}}</div>
+<div>Water: {{this.id.watering}}</div>
+<div>Humidity: {{this.id.humidity}}</div>
+======= --}}
+
+>>>>>>> 75fe543f7a65f639da3788d9de4f77f69dbbbaed
 
 <form action="/dashboard/{{ this._id }}/delete" method="GET">
   <button type="submit" class="button">Remove</button>
@@ -34,3 +55,8 @@
 {{/each}}
 {{/with}}
 </div>
+<<<<<<< HEAD
+=======
+{{!-- //this.id.familiy displays the DB value
+//eitout .id displays the current values --}}
+>>>>>>> 75fe543f7a65f639da3788d9de4f77f69dbbbaed
