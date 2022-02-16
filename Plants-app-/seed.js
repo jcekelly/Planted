@@ -65,7 +65,37 @@ mongoose.connect('mongodb://localhost/Plants-app-')
     fertilizer: 'Every 2 months',
     toxicityForPets: 'Non-toxic',
     image_url: 'https://res.cloudinary.com/dhbny7rpk/image/upload/v1644856840/58122755_000_a_kqyq8a.jpg',
-}
+},
+
+{ 
+    Category: 'Indoor',
+    family: 'Succulent',
+    name: 'Sansevieriat',
+    commonName: 'Snake Plant',
+    watering: 'Every Two Weeks',
+    light: 'Suited to both low and bright light',
+    size: 'size of plant',
+    humidity: 'Prefers dry enviroment',
+    temperature: 'Never below 10ºC',
+    fertilizer: 'Every 2 months',
+    toxicityForPets: 'Dangerous to people and animals',
+    image_url: 'https://res.cloudinary.com/dhbny7rpk/image/upload/v1644945309/Snake_Plant_Variegated_Grow_Pot_Compressed_y38ogd.jpg',
+},
+
+{ 
+    Category: 'Indoor',
+    family: 'Vine',
+    name: 'Epipremnum Aureum',
+    commonName: 'Pothos',
+    watering: 'Every Two Weeks',
+    light: 'Suited to both low and bright light',
+    size: 'size of plant',
+    humidity: 'No requirements',
+    temperature: 'Never below 10ºC',
+    fertilizer: 'Every 2 months',
+    toxicityForPets: 'Dangerous to people and animals',
+    image_url: 'https://res.cloudinary.com/dhbny7rpk/image/upload/v1644945519/pothos-plant_zgial4.jpg',
+},
 ]
 
 Plant.create(plants)

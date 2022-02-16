@@ -3,11 +3,11 @@
   <a class="active" href="dashboard">Dashboard</a>
   <a href="search-result">View all</a>
   <form id="logout-form" action="/logout" method="POST">
-    <button class="logout" >Logout</button>
+    <button class="logout">Logout</button>
   </form>
 </div>
 
-<h2>All Plants</h2>
+<h2>Results</h2>
 
 <form action="/search" method="GET">
   <label>
@@ -18,7 +18,7 @@
 <hr size="3" width="100%" color="green">  
 
 <div class="plant-list">
-{{#each plants}}
+{{#each plant}}
 <div class="plant">
 <li><img src="{{image_url}}" alt="picture of  {{commonName}}"/></li>
 <li>Family: {{family}}</li>
@@ -36,3 +36,4 @@
 </div>
 {{/each}}
 </div>
+
