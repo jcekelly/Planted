@@ -33,9 +33,15 @@ router.get('/search-result', (req, res, next) => {
 });
 
 router.get('/search', (req, res, next) => {
-  res.send(req.query);
-  console.log(req.query)
+  console.log(req.query);
+  Plant.find(req.query)
+  .then(plantResults => {
+    res.render('view-all-search-result', {plant: plantResults})
+  })
+  
 });
+
+
 
 //this is the route to add the plant to your private collection
 
