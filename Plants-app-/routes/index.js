@@ -37,8 +37,8 @@ router.get('/search', (req, res, next) => {
   Plant.find(req.query)
   .then(plantResults => {
     res.render('view-all-search-result', {plant: plantResults})
+    console.log(plantResults);
   })
-  
 });
 
 
