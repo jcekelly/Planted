@@ -196,17 +196,22 @@ h1 {
   width: 800px;
 }
 
+.image-edit-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .image-edit{
   display:flex;
   border-radius: 15px;
   margin: 20px;
 }
+
 .content-editor{
   width: 700px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin:20px;
 }
 
 .editor-list{
@@ -272,3 +277,10 @@ h1 {
   margin-top: 10px;
   bottom: 10px;
 }
+
+.imput-tag{
+  width: 150px;
+  border-radius: 15px;
+  border-color: rgb(171, 207, 150);
+}
+.imput-tag, textarea{background-color: rgba(171, 207, 150, 0.425); }

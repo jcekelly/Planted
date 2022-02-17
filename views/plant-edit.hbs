@@ -7,7 +7,7 @@
       <h2>{{this.id.commonName}}</h2>
     </div>
     <div class="content-editor">
-      <div >
+      <div class="image-edit-container">
         <img class="image-edit" src="{{this.id.image_url}}" alt="picture of  {{this.id.commonName}}"/>
       </div>
       <div class="editor-list">
@@ -15,34 +15,36 @@
         <form action="/{{this.id._id}}/editThis" method="post">
 
           <div><b class="edit-key"> Current category: </b>{{this.id.Category}}</div>
-
-          <label for="category">
-            <b>New category:</b>
-          </label>
-          <input type="text"  name="category" id="category" value="{{this.currentCategory}}" />
  
           <div><b>Plant family:</b> {{this.id.family}}</div>
           <div><b>Scientific name:</b> {{this.id.name}}</div>
           <div><b>Common name: </b>{{this.id.commonName}}</div>
-
-          <label for="nickName"> <b>Nickname: </b> </label>
-          <input type="text" name="nickName" id="nickName" value="{{this.nickname}}" />
           <div><b>Recommended humidity: </b>{{this.id.humidity}}</div>
-
-          <label for="humidity"> <b>Current humidity:</b>
-            <input type="percentage" name="humidity" id="humidity" value="{{this.currentHumidity}}" />
-          </label>
-
           <div><b>Temperature:</b> {{this.id.temperature}}</div>
-
-          <label for="temperature"> <b>Current temperature: </b> </label>
-          <input type="number" name="temperature" id="temperature" value="{{this.currentTemperature}}" />
-  
-
           <div><b>Fertilizer: </b>{{this.id.fertilizer}}</div>
           <div><b>Pets toxicity:</b> {{this.id.toxicityForPets}}</div>
-          <div><b>Water:</b> {{this.id.watering}}</div> 
+          <div><b>Water:</b> {{this.id.watering}}</div>
 
+          
+          <label for="category"><b>New category</b></label>
+          <p>
+            <input type="text"  name="category" id="category" value="{{this.currentCategory}}" class="imput-tag" />
+          </p>
+
+          <label for="nickName"> <b>Nickname </b> </label>
+          <p>
+            <input type="text" name="nickName" id="nickName" value="{{this.nickname}}" class="imput-tag"/>
+          </p>
+
+          <label for="humidity"> <b>Room humidity</b></label>
+            <p>
+              <input type="percentage" name="humidity" id="humidity" value="{{this.currentHumidity}}" class="imput-tag"/>
+            </p>
+
+          <label for="temperature"> <b>Room Temperature </b> </label>
+          <p>
+            <input type="number" name="temperature" id="temperature" value="{{this.currentTemperature}}" class="imput-tag"/>
+          </p>
           <div>
             <button type="submit" class="save-changes">Save changes</button>
           </div>
