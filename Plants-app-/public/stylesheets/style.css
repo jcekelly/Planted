@@ -26,6 +26,7 @@ h2 {
   overflow: hidden;
 }
 
+
 .topnav a {
   float: left;
   color: #f2f2f2;
@@ -74,10 +75,10 @@ h2 {
 
 li {
   list-style: none;
-  padding: 7px;
   font-size: medium;
   text-align: left;
 }
+
 
 ul {
   padding: 25px;
