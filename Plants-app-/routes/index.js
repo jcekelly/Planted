@@ -122,17 +122,6 @@ User.findByIdAndUpdate(req.session.currentUser._id,{
   })
 })
 
-
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
->>>>>>> c8db9a3f01a826dae8c139342c50293bfce89ed5
 /*Handlebars.registerHelper('iff', function(){
   
 })
