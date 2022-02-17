@@ -29,7 +29,7 @@ alt="picture of  {{this.id.commonName}}"/>
 <li>I need water: {{this.needWater}}</li>
 </ul>
 
-<form action="/dashboard/{{ this._id }}/delete" method="GET">
+<form action="/dashboard/{{ this._id }}/delete" method="POST">
   <button type="submit" class="button">Remove</button>
 </form>
 <button class="button"><a href="/dashboard/{{ this.id._id }}/edit">Edit</a></button>
