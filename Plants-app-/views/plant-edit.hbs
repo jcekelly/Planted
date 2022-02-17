@@ -1,49 +1,54 @@
-
-
+<html class="index-background">
 
 {{#with plant}}
 
-<h2>Edit the plant: {{this.id.commonName}}</h2>
+<div class="plant-editor">
 
-<img src="{{this.id.image_url}}" alt="picture of  {{this.id.commonName}}"/>
-<div>Current category: {{this.id.Category}}</div>
+<img class="image-edit" src="{{this.id.image_url}}" alt="picture of  {{this.id.commonName}}"/>
+
+<div class="content-editor">
+<h2>{{this.id.commonName}}</h2>
+
+<div><b> Current category: </b>{{this.id.Category}}</div>
 
 <form action="/{{this.id._id}}/editThis" method="post">
   
-  <label for="category"> New category: </label>
+  <label for="category"><b>New category:</b></label>
     <input type="text"  name="category" id="category" value="{{this.currentCategory}}" />
  
-<div>Plant family: {{this.id.family}}</div>
-<div>Scientific name: {{this.id.name}}</div>
-<div>Common name: {{this.id.commonName}}</div>
+<div><b>Plant family:</b> {{this.id.family}}</div>
+<div><b>Scientific name:</b> {{this.id.name}}</div>
+<div><b>Common name: </b>{{this.id.commonName}}</div>
 
-  <label for="nickName"> Nickname:  </label>
+  <label for="nickName"> <b>Nickname: </b> </label>
     <input type="text" name="nickName" id="nickName" value="{{this.nickname}}" />
 
-<div>Recommended humidity: {{this.id.humidity}}</div>
+<div><b>Recommended humidity: </b>{{this.id.humidity}}</div>
 
-  <label for="humidity"> Current humidity:
+  <label for="humidity"> <b>Current humidity:</b>
     <input type="percentage" name="humidity" id="humidity" value="{{this.currentHumidity}}" />
   </label>
 
-<div>Temperature: {{this.id.temperature}}</div>
+<div><b>Temperature:</b> {{this.id.temperature}}</div>
 
-  <label for="temperature"> Current temperature:  </label>
+  <label for="temperature"> <b>Current temperature: </b> </label>
     <input type="number" name="temperature" id="temperature" value="{{this.currentTemperature}}" />
   
 
-<div>fertilizer: {{this.id.fertilizer}}</div>
-<div>Pets toxicity: {{this.id.toxicityForPets}}</div>
-<div>Water: {{this.id.watering}}</div> 
-{{#if needWater}}
-    true
-{{/if}}
-  <label> I need to be water: </label>
+<div><b>Fertilizer: </b>{{this.id.fertilizer}}</div>
+<div><b>Pets toxicity:</b> {{this.id.toxicityForPets}}</div>
+<div><b>Water:</b> {{this.id.watering}}</div> 
+
+  <label> <b>I need to be water:</b> </label>
     <button type="reset">Watered</button>
 
 <div>
-  <button type="submit" class="button">Save changes</button>
+  <button type="submit" class="save-button">Save changes</button>
 </div>
+
 </form>
+</div>
+</div>
 
 {{/with}}
+</html>
