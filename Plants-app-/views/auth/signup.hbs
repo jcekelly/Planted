@@ -1,17 +1,19 @@
-<div id="form" class="login">
-  <h2>Signup</h2>
-  <form action="/signup" method="POST">
+<html class="index-background">
+<div id="form" class="index">
+  <h1>Signup</h1>
+  <form class="login-form" action="/signup" method="POST">
  
-    <label> Username
-      <input type="text" name="username" placeholder="ironhacker" />
-    </label>
+    <label> Username </label>
+      <input class="login-form-input" type="text" name="username" placeholder="ironhacker" />
+    
 
-    <label> Password
-      <input type="password" name="password" placeholder="********" />
-    </label>
+    <label> Password    </label>
+      <input class="login-form-input" type="password" name="password" placeholder="********" />
  
-    <button type="submit">Create account</button>
+ 
+    <button class="login-form-button" type="submit">Create account</button>
  
     {{!-- error message will be added here --}}
   </form>
 </div>
+</html>

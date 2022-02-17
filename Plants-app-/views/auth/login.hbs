@@ -1,15 +1,17 @@
-<div class="login">
+<html class="index-background">
+<div class="index">
 
 <h1>Log in </h1>
-<form action="/login" method="POST">
-	<label for="username">Username: </label>
-	<input type="text" name="username">
-	<label for="password">Password: </label>
-	<input type="password" name="password">
-	<button type="submit">Log in</button>
+<form class="login-form" action="/login" method="POST">
+	<label for="username">Username </label>
+	<input class="login-form-input" type="text" name="username">
+	<label for="password">Password </label>
+	<input class="login-form-input" type="password" name="password">
+	<button class="login-form-button" type="submit">Log in</button>
 	{{#if message}}
 		<p>{{message}}</p>
 	{{/if}}
 </form>
 
 </div>
+</html>

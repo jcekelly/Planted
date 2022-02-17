@@ -1,3 +1,7 @@
+* {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -44,6 +48,21 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form-input {
+  margin-bottom: 10px;
+}
+
+.login-form-button {
+  margin-bottom: 10px;
+  background-color: none;
 }
 
 li {
@@ -154,6 +173,7 @@ text-transform: uppercase;
 }
 */
 
+
 .plant-box {
   width: 200px;
   display: flex;
@@ -176,11 +196,34 @@ text-transform: uppercase;
   height: 250px;
   border-radius: 15px;
 }
+=======
+
+h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 60px;
+}
+
+
+
 
 .index {
+  width: 400px ;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.index-background { 
+  background: url(https://res.cloudinary.com/dhbny7rpk/image/upload/v1645026752/chris-abney-qLW70Aoo8BE-unsplash_sujaun.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .index-links {
@@ -189,7 +232,7 @@ text-transform: uppercase;
   align-items: center;
   justify-content: space-around;
   font-size: 30px;
-  background-color: rgba(51, 133, 69, 0.671);
+  background-color: rgba(51, 133, 69, 0.774);
   text-decoration: none;
   color: white;
   margin: 40px;
