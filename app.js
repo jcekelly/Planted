@@ -29,7 +29,7 @@ app.use(
     resave: true,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: "mongodb://localhost/Plants-app-",
+      mongoUrl: process.env.MONGODB_URI,
     }),
   })
 );
