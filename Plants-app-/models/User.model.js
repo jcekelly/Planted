@@ -22,10 +22,7 @@ const userSchema = new Schema(
         currentHumidity : {type:Number},
         currentCategory : {type:String},
         nickName : {type:String},
-        size : {
-          potsize: {type:Number},
-          height : {type:Number}
-        }
+        needWater: {type:Boolean}
       },
     ],
   },

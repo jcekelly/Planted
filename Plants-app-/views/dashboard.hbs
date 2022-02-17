@@ -14,25 +14,28 @@
 <div class="plant-list">
 
 {{#with user}}
-{{#each myPlants}}
+{{#each myPlants }}
 
-<div class="plant">
-<li><img src="{{this.id.image_url}}" alt="picture of  {{this.id.commonName}}"/></li>
-<li>Family: {{this.id.family}}</li>
+<div class="plant-box">
+<div class=""></div>
+<img class="plant-image" src="{{this.id.image_url}}"
+alt="picture of  {{this.id.commonName}}"/>
+<div class="pt-6 md:p-8 text-center md:text-left space-y-4"></div>
 <li>Common Name: {{this.id.commonName}}</li>
-<li>Water: {{this.id.watering}}</li>
+<li>Nickname: {{this.nickName}}</li>
+<li>Category: {{this.currentCategory}}</li>
 <li>Humidtiy: {{this.currentHumidity}}</li>
-<li> Light: {{this.id.light}}</li>
+<li>Light: {{this.id.light}}</li>
+<li>I need water: {{this.needWater}}</li>
 </ul>
 
 <form action="/dashboard/{{ this._id }}/delete" method="GET">
   <button type="submit" class="button">Remove</button>
 </form>
-<button><a href="/dashboard/{{ this._id }}/edit">Edit</a></button>
+<button class="button"><a href="/dashboard/{{ this.id._id }}/edit">Edit</a></button>
 </div>
 
 {{/each}}
 {{/with}}
 </div>
-{{!-- //this.id.familiy displays the DB value
-//eitout .id displays the current values --}}
+

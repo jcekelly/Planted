@@ -13,6 +13,9 @@ router.get('/dashboard', (req, res, next) => {
     User.findById(req.session.currentUser._id).populate("myPlants.id")
       .then(userFromDb => {
         res.render('dashboard.hbs', {user: userFromDb});
+        //if(this.needWater === true){
+
+        //}
       })
       .catch(error => {
         next(error);
@@ -68,10 +71,11 @@ router.get('/dashboard/:id/edit', (req, res, next) => {
   User.findById(req.session.currentUser._id)
     .populate('myPlants.id')
     .then((user) => {
+      //console.log("this is the user", user.myPlants)
       let chosenPlant;
       user.myPlants.map((plant) => {
-        console.log('params', req.params.id)
-        console.log('plant id', plant.id._id)
+        //console.log('params', req.params.id)
+        //console.log('plant id', plant.id._id)
         if (req.params.id.includes(plant.id._id)) {
           chosenPlant = plant
           console.log('chosen plant');
@@ -86,9 +90,8 @@ router.get('/dashboard/:id/edit', (req, res, next) => {
 
 
 router.post('/:id/editThis', (req, res, next) => {
-  const { picture, temperature, humidity, category, nickName, size:{potSize, height}} = req.body;
-  console.log('testing');
-  User.findById(req.session.currentUser._id)
+  const { picture, temperature, humidity, category, nickName, needWater} = req.body;
+  User.findById(req.session.currentUser._id).populate("myPlants.id")
     .then((user) => {
       user.myPlants.map((plant) => {
         if (req.params.id.includes(plant.id._id)) {
@@ -97,12 +100,11 @@ router.post('/:id/editThis', (req, res, next) => {
           plant.currentHumidity = humidity;
           plant.currentCategory = category;
           plant.nickName = nickName;
-          plant.size.potSize = potSize;
-          plant.size.height = height;
-        
+          plant.needWater= needWater;
           console.log('the plant', plant);
         }
       });
+     user.save(); 
     })
     .catch((err) => {
       next(err);
@@ -111,16 +113,45 @@ router.post('/:id/editThis', (req, res, next) => {
 
 
 router.get('/dashboard/:id/delete', (req, res, next) => {
-  User.findByIdAndUpdate(req.session.currentUser._id , {
-    $pull: {"myPlants": {"id": req.params.id} }
+  const userSessionId = req.session.currentUser._id
+  User.findByIdAndUpdate(userSessionId, {
+    $pull: {"myPlants": req.params.id} 
   })
     .then(() => {
-      res.redirect('/dashboard')
+      res.redirect('/dashboard');
     })
     .catch(err => {
       next(err);
     })
 });
+
+/*router.get('/movie-characters/delete/:id', (req, res) => {
+  const characterId = req.params.id;
+ 
+  apiService
+    .deleteCharacter(characterId)
+    .then((response) => {
+       res.json(response.data);
+      // res.redirect(`/movie-characters/list`); // <== leave this line commented for now
+    })
+    .catch(error => console.log(error));
+});
+*/
+
+/*Handlebars.registerHelper('iff', function(){
+  
+})
+document.getElementById('show').addEventListener("click", function(){
+  if(req.session.currentUser.id._id === true){
+    false
+  }else{
+    true
+  }
+})
+const iNeedWater = function(){
+
+}
+*/
 
 module.exports = router;
 
