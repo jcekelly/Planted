@@ -67,7 +67,6 @@ router.get('/dashboard/:id/add', (req, res, next) => {
 //this is the edit route
 
 router.get('/dashboard/:id/edit', (req, res, next) => {
-  console.log("test")
   User.findById(req.session.currentUser._id)
     .populate('myPlants.id')
     .then((user) => {
@@ -105,38 +104,26 @@ router.post('/:id/editThis', (req, res, next) => {
         }
       });
      user.save(); 
+     res.redirect('/dashboard')
     })
     .catch((err) => {
       next(err);
     });
 });
 
-
-router.get('/dashboard/:id/delete', (req, res, next) => {
-  const userSessionId = req.session.currentUser._id
-  User.findByIdAndUpdate(userSessionId, {
-    $pull: {"myPlants": req.params.id} 
+router.post('/dashboard/:id/delete', (req, res, next)=>{
+User.findByIdAndUpdate(req.session.currentUser._id,{
+  $pull : {myPlants: {_id:req.params.id}}})
+  .then((user)=>{
+    res.redirect('/dashboard');
   })
-    .then(() => {
-      res.redirect('/dashboard');
-    })
-    .catch(err => {
-      next(err);
-    })
-});
+  .catch(err => {
+    next(err);
+  })
+})
 
-/*router.get('/movie-characters/delete/:id', (req, res) => {
-  const characterId = req.params.id;
- 
-  apiService
-    .deleteCharacter(characterId)
-    .then((response) => {
-       res.json(response.data);
-      // res.redirect(`/movie-characters/list`); // <== leave this line commented for now
-    })
-    .catch(error => console.log(error));
-});
-*/
+
+
 
 /*Handlebars.registerHelper('iff', function(){
   
