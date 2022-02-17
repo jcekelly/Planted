@@ -7,34 +7,38 @@
   </form>
 </div>
 
-
-<h2>Your Personal Collection</h2>
+<div class="search-bar">
+  <h2>Personal Collection</h2>
+</div>
 <hr size="3" width="100%" color="green">  
 
 <div class="plant-list">
 
-{{#with user}}
-{{#each myPlants }}
+    {{#with user}}
+    {{#each myPlants }}
 
-<div class="plant-box">
-<img class="plant-image" src="{{this.id.image_url}}"
-alt="picture of  {{this.id.commonName}}"/>
-<ul>
-<li> <b>Common Name: </b> <p>{{this.id.commonName}}</p></li>
-<li> <b> Nickname: </b> <p>{{this.nickName}}</p></li>
-<li> <b> Category: </b> <p>{{this.currentCategory}}</p></li>
-<li> <b>Humidtiy: </b> <p>{{this.currentHumidity}}</p></li>
-<li>  <b>Light: </b> <p>{{this.id.light}}</p></li>
-<li> <b> I need water: </b> <p>{{this.needWater}}</p></li>
-</ul>
-
-<form action="/dashboard/{{ this._id }}/delete" method="POST">
-  <button type="submit" class="button">Remove</button>
-</form>
-<button class="button"><a href="/dashboard/{{ this.id._id }}/edit">Edit</a></button>
-</div>
-
-{{/each}}
-{{/with}}
+  <div class="plant-box">
+    <div><img class="plant-image" src="{{this.id.image_url}}" alt="picture of  {{this.id.commonName}}"/></div>
+    <div>
+      <ul>
+      <li> <b>Common Name </b> <p>{{this.id.commonName}}</p></li>
+      <li> <b> Nickname </b> <p>{{this.nickName}}</p></li>
+      <li> <b> Category </b> <p>{{this.currentCategory}}</p></li>
+      <li> <b>Room Humidtiy </b> <p>{{this.currentHumidity}}</p></li>
+      <li> <b>Room temperature </b> <p>{{this.currentTemperature}}</p></li>
+      <li> <b> Water requirements</b> <p>{{this.id.watering}}</p></li>
+      </ul>
+    </div>
+    <div class="save-div">
+      <form action="/dashboard/{{ this._id }}/delete" method="POST">
+        <button type="submit" class="delete-button">Remove</button>
+      </form>
+    </div>
+    <div class="save-div">
+      <button class="save-button"><a href="/dashboard/{{ this.id._id }}/edit">Edit</a></button>
+    </div>
+  </div>
+  {{/each}}
+  {{/with}}
 </div>
 

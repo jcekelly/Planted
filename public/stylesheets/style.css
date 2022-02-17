@@ -24,6 +24,7 @@ h2 {
 .topnav {
   background-color: rgb(171, 207, 150);
   overflow: hidden;
+  border-radius: 15px;
 }
 
 
@@ -77,11 +78,18 @@ li {
   list-style: none;
   font-size: medium;
   text-align: left;
+  padding-bottom: 15px;
+  
 }
 
 
 ul {
-  padding: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+p {
+  color: grey;
 }
 
 img {
@@ -112,21 +120,25 @@ border-radius: 5px; /* Adds curve to border corners */
 text-transform: uppercase;
 }
 
-.plant-box {
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: rgba(171, 207, 150, 0.315);
-  margin: 20px;
-  border-radius: 15px;
-}
 .plant-list {
   display: flex;
   flex-direction: row;
   justify-content: left;
   flex-wrap: wrap;
 }
+
+.plant-box {
+  width: 200px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  background-color: rgba(171, 207, 150, 0.315);
+  margin: 20px;
+  border-radius: 15px;
+  position: relative
+}
+
 
 .plant-image{
   width: 200px;
@@ -197,16 +209,49 @@ h1 {
 }
 
 .save-button {
-  width: 100px;
+  width: 200px;
   border: rgb(171, 207, 150);
   color: white; /* Text color */
   background-color: rgb(171, 207, 150); /* Remove background color */
   border-radius: 5px; /* Adds curve to border corners */
   text-transform: uppercase;
-  margin-top: 20px;
+  font-size: medium;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 10px;
 }
+
+/*.save-div {
+justify-content: flex-end;
+display: flex
+}*/
+
+.save-button a {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+}
+.delete-button{
+  width: 200px;
+  border: rgb(171, 207, 150);
+  color: white; /* Text color */
+  background-color: rgb(171, 207, 150); /* Remove background color */
+  border-radius: 5px; /* Adds curve to border corners */
+  text-transform: uppercase;
+  font-size: medium;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 40px;
+}
+
 
 .titles-edit{
   display: flex;
   justify-content: flex-end;
+}
+
+.search-bar{
+  margin-top: 20px;
+  margin-left: 18px;
 }
