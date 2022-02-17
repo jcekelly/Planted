@@ -1,0 +1,212 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
+
+h2 {
+  display: flex;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  align-items: center;
+}
+
+.topnav {
+  background-color: rgb(171, 207, 150);
+  overflow: hidden;
+}
+
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.logout {
+  color: #f2f2f2;
+  width: 30px;
+  text-decoration: none;
+  font-size: 17px;
+  border: none;
+  background: none;
+  padding-top: 14px;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.login-form-input {
+  margin-bottom: 10px;
+}
+
+.login-form-button {
+  margin-bottom: 10px;
+  background-color: none;
+}
+
+li {
+  list-style: none;
+  font-size: medium;
+  text-align: left;
+}
+
+
+ul {
+  padding: 25px;
+}
+
+img {
+  width: 200px;
+}
+
+.plant-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.plant {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.button {
+width: 100px;
+border: rgb(171, 207, 150);
+color: white; /* Text color */
+background-color: rgb(171, 207, 150); /* Remove background color */
+border-radius: 5px; /* Adds curve to border corners */
+text-transform: uppercase;
+}
+
+.plant-box {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgba(171, 207, 150, 0.315);
+  margin: 20px;
+  border-radius: 15px;
+}
+.plant-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.plant-image{
+  width: 200px;
+  height: 250px;
+  border-radius: 15px;
+}
+
+h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 60px;
+}
+
+
+.index {
+  width: 400px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.index-background { 
+  background: url(https://res.cloudinary.com/dhbny7rpk/image/upload/v1645026752/chris-abney-qLW70Aoo8BE-unsplash_sujaun.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.index-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 30px;
+  background-color: rgba(51, 133, 69, 0.774);
+  text-decoration: none;
+  color: white;
+  margin: 40px;
+  width: 300px;
+  height: 100px;
+}
+
+.plant-editor{
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.image-edit{
+  display:flex;
+  border-radius: 15px;
+  margin: 20px;
+}
+.content-editor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin:20px;
+}
+
+.save-button {
+  width: 100px;
+  border: rgb(171, 207, 150);
+  color: white; /* Text color */
+  background-color: rgb(171, 207, 150); /* Remove background color */
+  border-radius: 5px; /* Adds curve to border corners */
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.titles-edit{
+  display: flex;
+  justify-content: flex-end;
+}
