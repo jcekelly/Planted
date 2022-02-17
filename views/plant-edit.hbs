@@ -10,21 +10,49 @@
       <div class="image-edit-container">
         <img class="image-edit" src="{{this.id.image_url}}" alt="picture of  {{this.id.commonName}}"/>
       </div>
+      <div>
+      
+        <table class="table">
+          <tr>
+            <th><b>Current category</b></td>
+            <td>{{this.id.Category}}</td>
+          </tr>
+          <tr>
+            <th><b>Plant family</b></td>
+            <td>{{this.id.family}}</td>
+          </tr>
+          <tr>
+            <th><b>Scientific name</b></td>
+            <td>{{this.id.name}}</td>
+          </tr>
+          <tr>
+            <th><b>Common name</b></td>
+            <td>{{this.id.commonName}}</td>
+          </tr>
+          <tr>
+            <th><b>Recommended humidity</b></td>
+            <td>{{this.id.humidity}}</td>
+          </tr>
+          <tr>
+            <th><b>Temperature</b></td>
+            <td>{{this.id.temperature}}</td>
+          </tr>
+          <tr>
+            <th><b>Fertilizer</b></td>
+            <td>{{this.id.fertilizer}}</td>
+          </tr>
+          <tr>
+            <th><b>Pets toxicity</b></td>
+            <td>{{this.id.toxicityForPets}}</td>
+          </tr>
+          <tr>
+            <th><b>Water</b></td>
+            <td>{{this.id.watering}}</td>
+          </tr>
+        </table>
+      </div>
       <div class="editor-list">
-        
         <form action="/{{this.id._id}}/editThis" method="post">
-
-          <div><b class="edit-key"> Current category: </b>{{this.id.Category}}</div>
- 
-          <div><b>Plant family:</b> {{this.id.family}}</div>
-          <div><b>Scientific name:</b> {{this.id.name}}</div>
-          <div><b>Common name: </b>{{this.id.commonName}}</div>
-          <div><b>Recommended humidity: </b>{{this.id.humidity}}</div>
-          <div><b>Temperature:</b> {{this.id.temperature}}</div>
-          <div><b>Fertilizer: </b>{{this.id.fertilizer}}</div>
-          <div><b>Pets toxicity:</b> {{this.id.toxicityForPets}}</div>
-          <div><b>Water:</b> {{this.id.watering}}</div>
-
           
           <label for="category"><b>New category</b></label>
           <p>

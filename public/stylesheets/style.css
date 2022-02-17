@@ -192,7 +192,7 @@ h1 {
   align-items: center;
   justify-content: center;
   color: white;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.65);
   width: 800px;
 }
 
@@ -208,10 +208,10 @@ h1 {
 }
 
 .content-editor{
-  width: 700px;
+  width: 800px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .editor-list{
@@ -282,5 +282,25 @@ h1 {
   width: 150px;
   border-radius: 15px;
   border-color: rgb(171, 207, 150);
+  color: white;
 }
 .imput-tag, textarea{background-color: rgba(171, 207, 150, 0.425); }
+
+table{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+*/
+td {
+  width: 4rem;
+  height: 2rem;
+  text-align: left;
+  color: #ddd;
+}
+th{
+  width: 4rem;
+  height: 2rem;
+  text-align: right;
+}
