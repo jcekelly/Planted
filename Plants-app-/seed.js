@@ -144,21 +144,6 @@ mongoose.connect('mongodb://localhost/Plants-app-')
 },
 
 {
-    Category: 'Indoor',
-    family: 'Succulent',
-    name: 'Cactaceae',
-    commonName: 'Cactus',
-    watering: 'Every Two / Three Weeks',
-    light: 'Suited to bright direct Sunlight',
-    size: 'size of plant',
-    humidity: 'No requirements',
-    temperature: 'Never below 10ºC',
-    fertilizer: 'Never',
-    toxicityForPets: 'Non-toxic, but spiky',
-    image_url: 'https://res.cloudinary.com/dhbny7rpk/image/upload/v1645017897/a224404d7cc4567897605667370b428e_ioh92q.png',
-},
-
-{
 
     Category: 'Indoor',
     family: 'Blooming',

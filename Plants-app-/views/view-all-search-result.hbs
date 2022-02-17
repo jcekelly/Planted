@@ -19,8 +19,9 @@
 
 <div class="plant-list">
 {{#each plant}}
-<div class="plant">
-<li><img src="{{image_url}}" alt="picture of  {{commonName}}"/></li>
+<div class="plant-box">
+  <img  class="plant-image" src="{{image_url}}" alt="picture of  {{commonName}}"/>
+<ul>
 <li>Family: {{family}}</li>
 <li>Common Name: {{commonName}}</li>
 <li>Water: {{watering}}</li>
