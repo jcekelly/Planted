@@ -13,6 +13,7 @@ a {
 
 h1 {
   color: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 h2 {
@@ -24,6 +25,7 @@ h2 {
 .topnav {
   background-color: rgb(171, 207, 150);
   overflow: hidden;
+  border-radius: 15px;
 }
 
 
@@ -77,11 +79,18 @@ li {
   list-style: none;
   font-size: medium;
   text-align: left;
+  padding-bottom: 15px;
+  
 }
 
 
 ul {
-  padding: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+p {
+  color: grey;
 }
 
 img {
@@ -112,21 +121,25 @@ border-radius: 5px; /* Adds curve to border corners */
 text-transform: uppercase;
 }
 
-.plant-box {
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: rgba(171, 207, 150, 0.315);
-  margin: 20px;
-  border-radius: 15px;
-}
 .plant-list {
   display: flex;
   flex-direction: row;
   justify-content: left;
   flex-wrap: wrap;
 }
+
+.plant-box {
+  width: 200px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  background-color: rgba(171, 207, 150, 0.315);
+  margin: 20px;
+  border-radius: 15px;
+  position: relative
+}
+
 
 .plant-image{
   width: 200px;
@@ -142,11 +155,12 @@ h1 {
 
 .index {
   width: 400px ;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.65);
 }
 
 .index-background { 
@@ -173,40 +187,122 @@ h1 {
   width: 300px;
   height: 100px;
 }
-
-.plant-editor{
+.plant-editor-back{
   border-radius: 15px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
-  background-color: rgba(0,0,0,0.5);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 800px;
+}
+
+.image-edit-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .image-edit{
   display:flex;
   border-radius: 15px;
   margin: 20px;
 }
+
 .content-editor{
+  width: 800px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.editor-list{
+  display: flex;
   margin:20px;
+}
+.edit-key{
+  padding-bottom: 20px;
 }
 
 .save-button {
-  width: 100px;
+  width: 200px;
   border: rgb(171, 207, 150);
   color: white; /* Text color */
   background-color: rgb(171, 207, 150); /* Remove background color */
   border-radius: 5px; /* Adds curve to border corners */
   text-transform: uppercase;
-  margin-top: 20px;
+  font-size: medium;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 10px;
 }
+
+
+.save-button a {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+}
+.delete-button{
+  width: 200px;
+  border: rgb(171, 207, 150);
+  color: white; /* Text color */
+  background-color: rgb(171, 207, 150); /* Remove background color */
+  border-radius: 5px; /* Adds curve to border corners */
+  text-transform: uppercase;
+  font-size: medium;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 40px;
+}
+
 
 .titles-edit{
   display: flex;
   justify-content: flex-end;
+}
+
+.search-bar{
+  margin-top: 20px;
+  margin-left: 18px;
+}
+
+.save-changes{
+  width: 200px;
+  border: rgb(171, 207, 150);
+  color: white; /* Text color */
+  background-color: rgb(171, 207, 150); /* Remove background color */
+  border-radius: 5px; /* Adds curve to border corners */
+  text-transform: uppercase;
+  font-size: medium;
+  margin-top: 10px;
+  bottom: 10px;
+}
+
+.imput-tag{
+  width: 150px;
+  border-radius: 15px;
+  border-color: rgb(171, 207, 150);
+  color: white;
+}
+.imput-tag, textarea{background-color: rgba(171, 207, 150, 0.425); }
+
+table{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+*/
+td {
+  width: 4rem;
+  height: 2rem;
+  text-align: left;
+  color: #ddd;
+}
+th{
+  width: 4rem;
+  height: 2rem;
+  text-align: right;
 }

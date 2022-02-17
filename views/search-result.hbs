@@ -6,32 +6,35 @@
     <button class="logout" >Logout</button>
   </form>
 </div>
-
-<h2>All Plants</h2>
-
-<form action="/search" method="GET">
-  <label>
-    Search Plants
-    <input type="text" name="plant">
-  </label>
-
+<div class="search-bar">
+  <form action="/search" method="GET">
+    <label>
+      Search Plants
+      <input type="text" name="plant">
+    </label>
+  </div>
 <hr size="3" width="100%" color="green">  
 
 <div class="plant-list">
-{{#each plants}}
-<div class="plant-box">
-  <img class="plant-image" src="{{image_url}}" alt="picture of  {{commonName}}"/>
-<ul>
-<li> <b> Name </b> <p>{{name}} </p> </li>
-<li> <b>Common Name </b> <p>{{commonName}}</p></li>
-<li> <b>Water </b> <p>{{watering}}</p></li>
-<li> <b>Humidtiy </b> <p> {{humidity}} </p> </li>
-<li>  <b>Light </b> <p>{{light}} </p></li>
-</ul>
+  {{#each plants}}
+  
+  <div class="plant-box">
+    <div>
+      <img class="plant-image" src="{{image_url}}" alt="picture of  {{commonName}}"/>
+    </div>
+    <div>
+      <ul>
+        <li> <b> Name </b> <p>{{name}} </p> </li>
+        <li> <b>Common Name </b> <p>{{commonName}}</p></li>
+        <li> <b>Water </b> <p>{{watering}}</p></li>
+        <li> <b>Humidtiy </b> <p> {{humidity}} </p> </li>
+        <li>  <b>Light </b> <p>{{light}} </p></li>
+      </ul>
+    </div>
+    <div>
+      <button class="save-button"><a href="/dashboard/{{this._id}}/add">Add to collection</a></button>
+    </div>
 
-
-<button><a href="/dashboard/{{this._id}}/add">Add to collection</a></button>
-
-</div>
-{{/each}}
+  </div>
+  {{/each}}
 </div>
