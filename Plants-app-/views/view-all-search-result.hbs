@@ -17,9 +17,12 @@
 
 <hr size="3" width="100%" color="green">  
 
-<div class="plant-list">
 {{#each plant}}
-<div class="plant-box">
+
+
+
+<div class="plant-list">
+
   <img  class="plant-image" src="{{image_url}}" alt="picture of  {{commonName}}"/>
 <ul>
 <li> <b>Family</b> <p>{{family}}</p></li>
@@ -29,12 +32,9 @@
 <li> <b>Light</b> <p>{{light}}</p></li>
 </ul>
 
-
-<button><a href="/dashboard/{{this._id}}/add">Add to your private collection</a></button>
-
-<button type="submit">Add to the chart</button>
+<button class="add-button"><a href="/dashboard/{{this._id}}/add">Add to your private collection</a></button>
 
 </div>
 {{/each}}
-</div>
+
 

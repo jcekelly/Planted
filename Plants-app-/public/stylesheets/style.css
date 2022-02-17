@@ -24,6 +24,7 @@ h2 {
 .topnav {
   background-color: rgb(171, 207, 150);
   overflow: hidden;
+  border-radius: 15px
 }
 
 
@@ -34,6 +35,7 @@ h2 {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  ;
 }
 
 .topnav a:hover {
@@ -81,7 +83,7 @@ li {
 
 
 ul {
-  padding: 25px;
+  padding: 10px;
 }
 
 img {
@@ -115,8 +117,8 @@ text-transform: uppercase;
 .plant-box {
   width: 200px;
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
+  align-content: space-around;
   background-color: rgba(171, 207, 150, 0.315);
   margin: 20px;
   border-radius: 15px;
@@ -203,10 +205,20 @@ h1 {
   background-color: rgb(171, 207, 150); /* Remove background color */
   border-radius: 5px; /* Adds curve to border corners */
   text-transform: uppercase;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .titles-edit{
   display: flex;
   justify-content: flex-end;
+}
+
+.add-button{
+  width: 200px;
+  border: rgb(171, 207, 150);
+  color: white; /* Text color */
+  background-color: rgb(171, 207, 150); /* Remove background color */
+  border-radius: 5px; /* Adds curve to border corners */
+  text-transform: uppercase;
+  margin-top: 5px;
 }

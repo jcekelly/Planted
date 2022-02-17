@@ -11,12 +11,14 @@
 <h2>Your Personal Collection</h2>
 <hr size="3" width="100%" color="green">  
 
-<div class="plant-list">
+
+
 
 {{#with user}}
 {{#each myPlants }}
 
-<div class="plant-box">
+<div class="plant-list">
+
 <img class="plant-image" src="{{this.id.image_url}}"
 alt="picture of  {{this.id.commonName}}"/>
 <ul>
@@ -36,5 +38,4 @@ alt="picture of  {{this.id.commonName}}"/>
 
 {{/each}}
 {{/with}}
-</div>
 
