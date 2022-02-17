@@ -64,7 +64,7 @@ mongoose.connect('mongodb://localhost/Plants-app-')
     temperature: '18º-25ºC',
     fertilizer: 'Every 2 months',
     toxicityForPets: 'Non-toxic',
-    image_url: 'https://res.cloudinary.com/dhbny7rpk/image/upload/v1644856840/58122755_000_a_kqyq8a.jpg',
+    image_url: 'https://res.cloudinary.com/dhbny7rpk/image/upload/v1645092910/yetyh4xhclibc47yryfu_qkz7y7.jpg,'
 },
 
 { 

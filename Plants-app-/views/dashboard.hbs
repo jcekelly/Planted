@@ -17,10 +17,9 @@
 {{#each myPlants }}
 
 <div class="plant-box">
-<div class=""></div>
 <img class="plant-image" src="{{this.id.image_url}}"
 alt="picture of  {{this.id.commonName}}"/>
-<div class="pt-6 md:p-8 text-center md:text-left space-y-4"></div>
+<ul>
 <li>Common Name: {{this.id.commonName}}</li>
 <li>Nickname: {{this.nickName}}</li>
 <li>Category: {{this.currentCategory}}</li>

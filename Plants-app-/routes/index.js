@@ -105,6 +105,7 @@ router.post('/:id/editThis', (req, res, next) => {
         }
       });
      user.save(); 
+     res.redirect('/dashboard');
     })
     .catch((err) => {
       next(err);

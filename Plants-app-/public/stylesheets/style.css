@@ -54,6 +54,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
 }
 
 .login-form-input {
@@ -102,6 +103,71 @@ border: 2px solid #0099CC; /* Border thickness, line style, and color */
 border-radius: 5px; /* Adds curve to border corners */
 text-transform: uppercase;
 }
+
+.plant-box {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgba(171, 207, 150, 0.315);
+  margin: 20px;
+  border-radius: 15px;
+
+}
+.plant-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.plant-image{
+  width: 200px;
+  height: 250px;
+  border-radius: 15px;
+}
+
+h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 60px;
+}
+
+
+.index {
+  width: 400px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.index-background { 
+  background: url(https://res.cloudinary.com/dhbny7rpk/image/upload/v1645026752/chris-abney-qLW70Aoo8BE-unsplash_sujaun.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.index-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 30px;
+  background-color: rgba(51, 133, 69, 0.774);
+  text-decoration: none;
+  color: white;
+  margin: 40px;
+  width: 300px;
+  height: 100px;
+}
+
+
 /*
 .button span, .button .icon {
   display: block;
@@ -172,72 +238,3 @@ text-transform: uppercase;
   opacity: 1;
 }
 */
-
-
-.plant-box {
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: #fafafa;
-  margin: 20px;
-  border-radius: 15px;
-
-}
-.plant-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  flex-wrap: wrap;
-}
-
-.plant-image{
-  width: 200px;
-  height: 250px;
-  border-radius: 15px;
-}
-=======
-
-h1 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 60px;
-}
-
-
-
-
-.index {
-  width: 400px ;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.index-background { 
-  background: url(https://res.cloudinary.com/dhbny7rpk/image/upload/v1645026752/chris-abney-qLW70Aoo8BE-unsplash_sujaun.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.index-links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  font-size: 30px;
-  background-color: rgba(51, 133, 69, 0.774);
-  text-decoration: none;
-  color: white;
-  margin: 40px;
-  width: 300px;
-  height: 100px;
-}
-
-
