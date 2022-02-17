@@ -36,7 +36,7 @@ mongoose.connect(mongoDB)
     temperature: '18º-25ºC.',
     fertilizer: 'Once a month',
     toxicityForPets: 'Non-toxic',
-    image_url: 'https://res.cloudinary.com/dhbny7rpk/image/upload/v1644856768/Phlebodium-blue-star-12-Plantler-2_xuxwgd.jpg'
+    image_url: 'https://res.cloudinary.com/dhbny7rpk/image/upload/v1645092910/yetyh4xhclibc47yryfu_qkz7y7.jpg'
 },
 
 { 
@@ -66,7 +66,7 @@ mongoose.connect(mongoDB)
     temperature: '18º-25ºC',
     fertilizer: 'Every 2 months',
     toxicityForPets: 'Non-toxic',
-    image_url: 'https://res.cloudinary.com/dhbny7rpk/image/upload/v1645092910/yetyh4xhclibc47yryfu_qkz7y7.jpg,'
+    image_url: 'https://res.cloudinary.com/dhbny7rpk/image/upload/v1645111732/58122755_000_a_1_m67nah.jpg.jpg'
 },
 
 { 
