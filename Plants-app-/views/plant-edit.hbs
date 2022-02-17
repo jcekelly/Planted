@@ -1,63 +1,49 @@
 
-<h2>Edit the plant: {{plant.commonName}}</h2>
+
 
 {{#with plant}}
 
-<img src="{{id.img_url}}" alt="picture of  {{this.myPlants.id.commonName}}"/>
-<div>Current category: {{this.myPlants.Category}}</div>
+<h2>Edit the plant: {{this.id.commonName}}</h2>
 
-<form action="/{{this._id}}/editThis" method="post">
+<img src="{{this.id.image_url}}" alt="picture of  {{this.id.commonName}}"/>
+<div>Current category: {{this.id.Category}}</div>
+
+<form action="/{{this.id._id}}/editThis" method="post">
   
   <label for="category"> New category: </label>
-    <input type="text"  name="category" id="category" value="{{this.myPlants.currentCategory}}" />
+    <input type="text"  name="category" id="category" value="{{this.currentCategory}}" />
  
-<div>Plant family: {{this.myPlants.id.family}}</div>
-<div>Scientific name: {{this.myPlants.id.name}}</div>
-<div>Common name: {{this.myPlants.id.commonName}}</div>
+<div>Plant family: {{this.id.family}}</div>
+<div>Scientific name: {{this.id.name}}</div>
+<div>Common name: {{this.id.commonName}}</div>
 
   <label for="nickName"> Nickname:  </label>
-    <input type="text" name="nickName" id="nickName" value="{{this.myPlants.nickname}}" />
+    <input type="text" name="nickName" id="nickName" value="{{this.nickname}}" />
 
-<div>Water: {{this.myPlants.watering}}</div> 
-
-  <label for="potSize"> Pot size: </label>
-    <input type="number" name="potSize" id="potSize" value="{{this.myPLants.size.potSize}}" />
- 
-  <label for="height"> Height:  </label>
-    <input type="number" name="height" id="potSize" value="{{this.myPlants.size.height}}" />
-
-<div>Recommended humidity: {{this.myPlants.id.humidity}}</div>
+<div>Recommended humidity: {{this.id.humidity}}</div>
 
   <label for="humidity"> Current humidity:
-    <input type="percentage" name="humidity" id="humidity" value="{{this.myPlants.currentHumidity}}" />
+    <input type="percentage" name="humidity" id="humidity" value="{{this.currentHumidity}}" />
   </label>
 
 <div>Temperature: {{this.id.temperature}}</div>
 
   <label for="temperature"> Current temperature:  </label>
-    <input type="number" name="temperature" id="temperature" value="{{this.myPlants.currentTemperature}}" />
+    <input type="number" name="temperature" id="temperature" value="{{this.currentTemperature}}" />
   
 
-
-<div>fertilizer: {{this.myPlants.id.fertilizer}}</div>
-<div>Pets toxicity: {{this.myPlants.id.toxicityForPets}}</div>
-
+<div>fertilizer: {{this.id.fertilizer}}</div>
+<div>Pets toxicity: {{this.id.toxicityForPets}}</div>
+<div>Water: {{this.id.watering}}</div> 
+{{#if needWater}}
+    true
+{{/if}}
   <label> I need to be water: </label>
     <button type="reset">Watered</button>
 
-
 <div>
-  <button type="submit">Save changes</button>
+  <button type="submit" class="button">Save changes</button>
 </div>
 </form>
 
 {{/with}}
-
-
-<label for='temperature'> Current temperature: </label>
-    <input
-      type='degree'
-      id="'temperature"
-      name='temperature'
-      value='{{this.temperature}}'
-    />
