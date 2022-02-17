@@ -104,9 +104,7 @@ router.post('/:id/editThis', (req, res, next) => {
         }
       });
      user.save(); 
-
      res.redirect('/dashboard');
-
     })
     .catch((err) => {
       next(err);
@@ -123,12 +121,6 @@ User.findByIdAndUpdate(req.session.currentUser._id,{
     next(err);
   })
 })
-
-
-
-
-
-
 
 
 
