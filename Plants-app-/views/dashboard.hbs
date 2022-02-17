@@ -20,12 +20,12 @@
 <img class="plant-image" src="{{this.id.image_url}}"
 alt="picture of  {{this.id.commonName}}"/>
 <ul>
-<li>Common Name: {{this.id.commonName}}</li>
-<li>Nickname: {{this.nickName}}</li>
-<li>Category: {{this.currentCategory}}</li>
-<li>Humidtiy: {{this.currentHumidity}}</li>
-<li>Light: {{this.id.light}}</li>
-<li>I need water: {{this.needWater}}</li>
+<li> <b>Common Name: </b> <p>{{this.id.commonName}}</p></li>
+<li> <b> Nickname: </b> <p>{{this.nickName}}</p></li>
+<li> <b> Category: </b> <p>{{this.currentCategory}}</p></li>
+<li> <b>Humidtiy: </b> <p>{{this.currentHumidity}}</p></li>
+<li>  <b>Light: </b> <p>{{this.id.light}}</p></li>
+<li> <b> I need water: </b> <p>{{this.needWater}}</p></li>
 </ul>
 
 <form action="/dashboard/{{ this._id }}/delete" method="POST">
