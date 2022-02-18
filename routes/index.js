@@ -103,8 +103,13 @@ router.post('/:id/editThis', (req, res, next) => {
           console.log('the plant', plant);
         }
       });
-     user.save(); 
-     res.redirect('/dashboard');
+     user.save()
+     .then(() => {
+      res.redirect('/dashboard')
+      // .catch((err) => {
+      //   next(err);
+      // });
+     })
     })
     .catch((err) => {
       next(err);
