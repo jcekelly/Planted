@@ -19,7 +19,7 @@ const userSchema = new Schema(
         ref: 'Plant'},
         currentPicture: {type:String},
         currentTemperature:{type:Number},
-        currentHumidity : {type:Number},
+        currentHumidity : {type:String},
         currentCategory : {type:String},
         nickName : {type:String},
         needWater: {type:Boolean}
