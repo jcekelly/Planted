@@ -148,7 +148,6 @@ text-transform: uppercase;
 }
 
 h1 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 60px;
 }
 
@@ -156,6 +155,15 @@ h1 {
 .index {
   width: 400px ;
   height: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: rgba(0,0,0,0.65);
+}
+.index1{
+  width: 400px ;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -294,7 +302,7 @@ table{
   justify-content: center;
   
 }
-*/
+
 td {
   width: 4rem;
   height: 2rem;
