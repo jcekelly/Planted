@@ -155,6 +155,16 @@ h1 {
 
 .index {
   width: 400px ;
+  height: 270;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: rgba(0,0,0,0.65);
+}
+
+.index1{
+  width: 400px ;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -162,6 +172,7 @@ h1 {
   color: white;
   background-color: rgba(0,0,0,0.65);
 }
+
 
 .index-background { 
   background: url(https://res.cloudinary.com/dhbny7rpk/image/upload/v1645026752/chris-abney-qLW70Aoo8BE-unsplash_sujaun.jpg) no-repeat center center fixed; 
